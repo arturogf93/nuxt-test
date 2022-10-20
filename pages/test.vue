@@ -7,8 +7,8 @@ const { data: pokemon } = await useFetch('https://pokeapi.co/api/v2/pokemon/ditt
     <Head>
       <Title>{{ pokemon.name }}</Title>
       <Meta name="description" :content="pokemon.name" />
-      <Meta property="og:title" content="pokemon.name" />
-      <Meta property="og:image" content="pokemon.sprites.front_default" />
+      <Meta property="og:title" :content="pokemon.name" />
+      <Meta property="og:image" :content="pokemon.sprites.front_default" />
     </Head>
 
     {{ pokemon.name }}
