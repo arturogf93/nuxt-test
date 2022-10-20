@@ -1,0 +1,16 @@
+app: nuxt
+org: regiosoft
+service: nuxt-app-lamba
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: dev
+  region: us-east-1
+
+functions:
+  nuxt:
+    handler: .output/server/index.handler
+    events:
+      - http: ANY /
+      - http: ANY /{proxy+}
